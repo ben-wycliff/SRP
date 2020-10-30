@@ -19,5 +19,11 @@
   "homepage": "https://github.com/ben-wycliff/SRP#readme",
   "devDependencies": {
     "electron": "10.1.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "ffmpeg": "0.0.4",
+    "file-saver": "^2.0.2",
+    "jquery": "^3.5.1"
   }
 }
