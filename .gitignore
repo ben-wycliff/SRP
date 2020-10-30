@@ -1,3 +1,5 @@
 benv/
 venv/
 node_modules/
+__pycache__
+song.mp3
