@@ -1,0 +1,62 @@
+/* 142850 - navy blue
+27496d - lighter blue
+00909e - greenish blue
+dae1e7 - gray */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Varela Round', sans-serif;
+}
+.main{
+    background-color: #142850;
+    color: #dae1e7;
+    height: 100vh;
+    text-align: center;
+}
+h1{
+    padding-top: 20px;
+    font-size: 35px;
+}
+.canvas {
+    height: 50vh;
+    background-color: #27496d;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#stop {
+    background-color: #dae1e7;
+    color: #00909e;
+}
+button {
+    background-color: #00909e;
+    width: 100px;
+    padding: 10px;
+    color: #dae1e7;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 0px;
+    margin-top: 50px;
+}
+button:hover{
+    border:0px;
+    cursor: pointer;
+}
+button:visited{
+    border:0px;
+    outline: none;
+}
+button:active{
+    border:0px;
+    cursor: pointer;
+}
+#wave-form {
+    background-color: #27496d;
+    margin-top: 50px;
+    width: 70vw;
+    height: 100px;
+}
+#audio{
+    margin-top: 50px;
+}
