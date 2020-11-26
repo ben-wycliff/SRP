@@ -19,20 +19,10 @@
       <h1>Your Desktop Assistant</h1>
       <div class="canvas">
         <canvas id="wave-form"></canvas>
-        <audio id="source"></audio>
-        <!-- <div class="audio" id="audio"></div> -->
       </div>
       <button id="record">record</button>
-      <!-- <button id="stop">send</button> -->
     </div>
     <script>
-      // const $ = require('jquery')
-      // var audio = new Audio();
-      // audio.src = "";
-      // audio.controls = true;
-      // audio.loop = true;
-      // audio.autoplay = false;
-      // setting visualizer variables
       const axios = require("axios");
 
       var canvas,
@@ -44,42 +34,34 @@
         bars,
         bar_x,
         bar_width,
-        bar_height,
-        blob;
+        bar_height;
       document
         .getElementById("record")
         .addEventListener("click", initMp3Player);
-      //   window.addEventListener("load", initMp3Player, false)
 
       async function initMp3Player() {
-        // document.getElementById("source").appendChild(audio);
-
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: true,
         });
-
         context = new AudioContext();
         analyser = context.createAnalyser();
         analyser.fftSize = 2048;
         canvas = document.getElementById("wave-form");
         ctx = canvas.getContext("2d");
-
         source = context.createMediaStreamSource(stream);
         source.connect(analyser);
         analyser.connect(context.destination);
 
+        // connecting to backend
+        setTimeout(() => context.close(), 5000);
         axios.get("http://localhost:5000/").then(
           (res) => {
             console.log(res);
-            context.close();
           },
           (error) => {
             console.log(error);
           }
         );
-        // document.getElementById("stop").addEventListener("click", function () {
-        //   context.close();
-        // });
 
         frameLooper();
       }
