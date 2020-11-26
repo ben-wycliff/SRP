@@ -23,7 +23,8 @@ commands = {
 }
 
 app = Flask(__name__)
-@app.route('/' methods=['GET'])
+
+@app.route('/', methods=['GET'])
 def recognize_speech():
     microphone = SR.Microphone()
     r = SR.Recognizer()
@@ -36,6 +37,7 @@ def recognize_speech():
 
         try:
             response["message"] = r.recognize_google(inputaudio).lower()
+            # response["message"] = r.recognize_sphinx(inputaudio).lower()
         except SR.RequestError:
             # API was unreachable or unresponsive
             response["success"] = False
